@@ -6,6 +6,4 @@ const mockBidItems = [
 ];
 
 
-// module.export { mockBidItems };
-
-exports.mockBidItems = mockBidItems;
+module.exports = {mockBidItems};

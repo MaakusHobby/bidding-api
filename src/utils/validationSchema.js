@@ -1,4 +1,4 @@
-const createBiddingsValidationSchema = {
+const biddingsValidationSchema = {
     name: {
         notEmpty: {
             errorMessage: "Name cannot be empty"
@@ -25,4 +25,4 @@ const createBiddingsValidationSchema = {
     }
 }
 
-exports.biddingsValidationSchema = createBiddingsValidationSchema;
+module.exports = {biddingsValidationSchema};
