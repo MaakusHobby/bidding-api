@@ -6,6 +6,7 @@
   "scripts": {
     "dev": "nodemon -r dotenv/config ./index.js",
     "start": "node -r dotenv/config --env-file=.env ./index.js",
+    "migrate:db:latest" : "node -pe \"require('dotenv').config(); require('./db/migrate').latest().then(() => { console.log('Done'); process.exit(0)}).catch((err) => { console.log('Error', err); process.exit(1)})\"",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
@@ -15,6 +16,7 @@
     "dotenv": "^16.4.5",
     "express": "^4.19.2",
     "express-validator": "^7.0.1",
+    "knex": "^3.1.0",
     "nodemon": "^3.1.0",
     "pg": "^8.11.5"
   }

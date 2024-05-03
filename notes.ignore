@@ -1,0 +1,10 @@
+Execute psql on command line:
+
+```sh
+docker exec -it docker-db-1 psql -U postgres -W postgres
+```
+
+- POSTGRES_USER=postgres
+- POSTGRES_PASSWORD=postgres
+- PGADMIN_DEFAULT_PASSWORD=postgres
+- PGADMIN_DEFAULT_EMAIL=sampleemail@gmail.com

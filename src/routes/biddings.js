@@ -73,7 +73,8 @@ router.get("/biddings/:id", async (req, res) => {
     }catch(e)
     {
         console.log(e);
-        return res.status(500)
+        let err = e.code === 'ECONNREFUSED' ? "Couldn't connect to database" : e;
+        return res.status(500).send({message: err});
     }
 
 })
@@ -102,6 +103,7 @@ async (req, res) => {
         const client = getClient();
 
         await client.connect();
+
         await client.query(`INSERT INTO  ${tableName}(name,starting_bid,increment) VALUES ('${name}',${starting_bid},${increment})`);
 
          const result = {

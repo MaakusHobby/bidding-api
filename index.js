@@ -17,9 +17,16 @@ const start = async () => {
         console.log(err);
         process.exit(1);
     }
+
+    process.on('beforeExit', (code) => {
+        console.log('Before exit: code ', code);
+      });
+    
 }
 
 start();
+
+
 
 
 

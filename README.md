@@ -27,13 +27,17 @@ Create a **.env** file inside docker folder and insert this key value paired dat
 
 You can change this values if you want to:
 
-- POSTGRES_USER=postgres
-- POSTGRES_PASSWORD=postgres
-- PGADMIN_DEFAULT_PASSWORD=postgres
-- PGADMIN_DEFAULT_EMAIL=sampleemail@gmail.com
+- PORT=3000
 
-Execute psql on command line:
+- DB_CLIENT="pg"
+- DB_HOST="localhost"
+- DB_USER="postgres"
+- DB_PASSWORD="postgres"
+- DB_NAME="bidding_db"
+- DB_PORT=5432
+
+Go to **/docker** and run docker command:
 
 ```sh
-docker exec -it docker-db-1 psql -U postgres -W postgres
+docker compose up
 ```
